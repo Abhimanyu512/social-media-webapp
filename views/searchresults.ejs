@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VITgram | Search</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/search.css">
+</head>
+
+<body>
+        <div id="topbar">
+                <a href="/index" id="homebut"><img class="icon" src="/images/home.png"></a>
+                <a href="/search" id="searchbut"><img class="icon" src="/images/search.png"></a>
+                <a href="/index/new" id="uploadbut"><img class="icon" src="/images/plus.png"></a>
+                <a href="/user/<%=currentUser.id%>" id="profbut"><img class="icon" src="/images/user.png"></a>
+                <a href="/logout" id="recentbut"><img class="icon" src="/images/logout.png"></a>
+            </div>
+    <div id="body">
+        <div id="result">
+            <ul id="searchresult" type="none">
+                <%users.forEach(function(user){%>
+                <div id="rslt">
+                    <li>
+                        <img src="<%=user.dp%>" alt="">
+                        <a href="/user/<%=user._id%>"><span><%=user.name%></span></a>
+                    </li>
+                </div>
+                <%})%>
+                <br>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
